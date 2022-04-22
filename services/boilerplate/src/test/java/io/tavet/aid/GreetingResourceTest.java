@@ -1,4 +1,4 @@
-package io.tavet.aid.boilerplate;
+package io.tavet.aid;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
