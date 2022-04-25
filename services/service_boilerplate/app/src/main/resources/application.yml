@@ -1,0 +1,5 @@
+quarkus:
+  index-dependency:
+    domain:
+      group-id: io.tavet.aid
+      artifact-id: domain
