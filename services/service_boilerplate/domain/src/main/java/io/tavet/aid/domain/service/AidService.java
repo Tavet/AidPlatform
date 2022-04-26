@@ -6,4 +6,6 @@ import io.tavet.aid.domain.Aid;
 
 public interface AidService {
     UUID createAidRequest(Aid aid);
+
+    Aid getAidRequest(UUID id);
 }
