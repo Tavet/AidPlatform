@@ -3,3 +3,6 @@ quarkus:
     domain:
       group-id: io.tavet.aid
       artifact-id: domain
+    infrastructure:
+      group-id: io.tavet.aid
+      artifact-id: infrastructure

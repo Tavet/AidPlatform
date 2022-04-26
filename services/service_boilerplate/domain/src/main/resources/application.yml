@@ -1,0 +1,5 @@
+quarkus:
+  index-dependency:
+    infrastructure:
+      group-id: io.tavet.aid
+      artifact-id: infrastructure
