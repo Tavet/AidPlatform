@@ -1,0 +1,3 @@
+CREATE USER aid_root WITH PASSWORD 'admin';
+CREATE DATABASE aid_db;
+GRANT ALL PRIVILEGES ON DATABASE aid_db TO aid_root;
