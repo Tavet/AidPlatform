@@ -2,9 +2,11 @@ package io.tavet.aid.domain;
 
 import java.util.UUID;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
+@Builder
 public class Aid {
     private UUID id;
     private Location location;

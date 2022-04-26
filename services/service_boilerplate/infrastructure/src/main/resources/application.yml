@@ -1,11 +1,11 @@
 quarkus:
   datasource:
     db-kind: postgresql
-    username: postgres
-    password: postgres
+    username: aid_root
+    password: admin
     jdbc:
-      url: jdbc:postgresql://localhost:5432
-
+      url: jdbc:postgresql://localhost:5432/aid_db
+      
   # hibernate-orm:
   #   database:
   #     generation: drop-and-create

@@ -25,7 +25,7 @@ public class AidResource {
 
     @GET
     public Aid hello() {
-        return new Aid();
+        return Aid.builder().build();
     }
 
     @POST
