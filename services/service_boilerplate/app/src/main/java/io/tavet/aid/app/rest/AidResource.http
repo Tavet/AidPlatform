@@ -1,7 +1,11 @@
-POST http://localhost:8080/aid HTTP/1.1
+# POST http://localhost:8080/aid HTTP/1.1
+# content-type: application/json
+# accept: application/json
+
+# {
+#     "id": "sample"
+# }
+
+GET http://localhost:8080/aid/5fca7548-5311-4bc8-8155-26c40b8fb6f
 content-type: application/json
 accept: application/json
-
-{
-    "id": "sample"
-}

@@ -1,4 +1,4 @@
-package io.tavet.aid.domain;
+package io.tavet.aid.domain.entity.location;
 
 import lombok.Getter;
 import lombok.Setter;

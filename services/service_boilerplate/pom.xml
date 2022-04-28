@@ -21,9 +21,9 @@
   </properties>
 
   <modules>
-    <module>app</module>
-    <module>domain</module>
     <module>infrastructure</module>
+    <module>domain</module>
+    <module>app</module>
   </modules>
 
   <dependencyManagement>

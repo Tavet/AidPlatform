@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import io.tavet.aid.domain.Aid;
+import io.tavet.aid.domain.entity.aid.Aid;
 import lombok.Getter;
 
 @Getter

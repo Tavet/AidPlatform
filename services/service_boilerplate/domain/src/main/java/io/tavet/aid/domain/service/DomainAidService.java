@@ -3,17 +3,16 @@ package io.tavet.aid.domain.service;
 import java.util.UUID;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Instance;
 
-import io.tavet.aid.domain.Aid;
+import io.tavet.aid.domain.entity.aid.Aid;
 import io.tavet.aid.domain.repository.AidRepository;
 
 @ApplicationScoped
 public class DomainAidService implements AidService {
 
-    private final Instance<AidRepository> aidRepository;
+    private final AidRepository aidRepository;
 
-    public DomainAidService(Instance<AidRepository> aidRepository) {
+    public DomainAidService(AidRepository aidRepository) {
         this.aidRepository = aidRepository;
     }
 
@@ -26,7 +25,7 @@ public class DomainAidService implements AidService {
 
     @Override
     public Aid getAidRequest(UUID id) {
-        return aidRepository.get().findById(id);
+        return aidRepository.findById(id);
     }
 
 }
