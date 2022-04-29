@@ -1,10 +1,10 @@
 package io.tavet.aid.domain.entity.location;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
+@AllArgsConstructor
 public class Location {
     private String latitude;
     private String longitude;

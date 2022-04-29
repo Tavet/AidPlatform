@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "f8068133-17ea-4961-8541-702c2ea59c03",
+		"name": "Aid Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "boilerplate",
+			"item": [
+				{
+					"name": "Get Aid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/aid/e68842f0-9be3-47d1-bad2-58122ae3e7ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aid",
+								"e68842f0-9be3-47d1-bad2-58122ae3e7ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -16,4 +16,8 @@ public class AidEntity {
     @Id
     @GeneratedValue
     private UUID id;
+    private String latitude;
+    private String longitude;
+    private String title;
+    private String description;
 }

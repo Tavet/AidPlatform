@@ -11,7 +11,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" SCHEMA extensions;
 -- dev schema
 CREATE SCHEMA IF NOT EXISTS dev;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA dev TO aid_root;
-set search_path = dev, extensions;
+ALTER ROLE aid_root SET search_path = dev, extensions;
 
 -- initial table
 DROP TABLE IF EXISTS aid CASCADE;
@@ -25,7 +25,7 @@ CREATE TABLE aid (
 );
 
 -- example values
-INSERT INTO dev.aid(latitude, longitude, title, description) VALUES ('51.2071453', '24.6924983', 'Medicaments', 'Test description'),
+INSERT INTO aid(latitude, longitude, title, description) VALUES ('51.2071453', '24.6924983', 'Medicaments', 'Test description'),
 ('48.450001', '34.983334', 'Construction materials', 'Test description'),
 ('50.450001', '30.523333', 'Construction workers', 'Test description'),
 ('48.748718', '30.221500', 'Picks and shovels', 'Test description'),
