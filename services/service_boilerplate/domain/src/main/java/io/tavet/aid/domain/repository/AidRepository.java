@@ -5,6 +5,6 @@ import java.util.UUID;
 import io.tavet.aid.domain.entity.aid.Aid;
 
 public interface AidRepository {
-    void save(Aid aid);
+    UUID save(Aid aid);
     Aid findById(UUID id);
 }

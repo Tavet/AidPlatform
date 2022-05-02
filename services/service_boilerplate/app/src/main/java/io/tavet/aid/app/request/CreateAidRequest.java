@@ -7,8 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.tavet.aid.domain.entity.aid.Aid;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class CreateAidRequest {
     @NotNull
     private Aid aid;

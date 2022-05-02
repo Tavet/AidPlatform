@@ -18,9 +18,7 @@ public class DomainAidService implements AidService {
 
     @Override
     public UUID createAidRequest(Aid aid) {
-        // aidRepository.save(aid);
-
-        return UUID.randomUUID();
+        return aidRepository.save(aid);
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 import io.tavet.aid.domain.entity.aid.Aid;
 import io.tavet.aid.domain.entity.aid.exception.AidNotFoundException;
@@ -16,13 +16,23 @@ import io.tavet.aid.infrastructure.entity.AidEntity;
 @ApplicationScoped
 public class PostgresAidRepository implements AidRepository {
 
-    @Inject
-    private AidPanacheRepository repository;
+    private final AidPanacheRepository repository;
 
+    public PostgresAidRepository(AidPanacheRepository repository) {
+        this.repository = repository;
+    }
+
+    @Transactional
     @Override
-    public void save(Aid aid) {
-        // TODO Auto-generated method stub
+    public UUID save(Aid aid) {
+        AidEntity entity = AidEntity.builder()
+                .longitude(aid.getLocation().getLongitude())
+                .latitude(aid.getLocation().getLatitude())
+                .title(aid.getTitle())
+                .description(aid.getDescription()).build();
 
+        repository.persist(entity);
+        return entity.getId();
     }
 
     @Override

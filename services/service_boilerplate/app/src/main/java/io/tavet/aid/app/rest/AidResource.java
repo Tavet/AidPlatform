@@ -34,6 +34,7 @@ public class AidResource {
 
     @POST
     public CreateAidResponse createAidRequest(CreateAidRequest request) {
+        System.out.println("REQUEST: " + request.toString());
         final UUID id = aidService.createAidRequest(request.getAid());
         return new CreateAidResponse(id);
     }

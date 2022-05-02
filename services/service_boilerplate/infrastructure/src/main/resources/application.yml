@@ -6,6 +6,10 @@ quarkus:
     jdbc:
       url: jdbc:postgresql://localhost:5432/aid_db
 
+  transaction-manager:
+    default-transaction-timeout: 240s
+    
   flyway:
     migrate-at-start: true
     baseline-on-migrate: true
+    
