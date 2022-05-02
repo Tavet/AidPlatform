@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 import io.tavet.aid.app.request.CreateAidRequest;
 import io.tavet.aid.app.response.CreateAidResponse;
 import io.tavet.aid.domain.entity.aid.Aid;
+import io.tavet.aid.domain.entity.location.exception.CoordsNotValidException;
 import io.tavet.aid.domain.service.AidService;
 
 @Path("/aid")
@@ -34,7 +35,9 @@ public class AidResource {
 
     @POST
     public CreateAidResponse createAidRequest(CreateAidRequest request) {
-        System.out.println("REQUEST: " + request.toString());
+        if (!request.getAid().getLocation().isValid())
+            throw new CoordsNotValidException();
+
         final UUID id = aidService.createAidRequest(request.getAid());
         return new CreateAidResponse(id);
     }

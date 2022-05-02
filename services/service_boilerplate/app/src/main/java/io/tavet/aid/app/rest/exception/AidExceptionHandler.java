@@ -1,4 +1,4 @@
-package io.tavet.aid.app.rest;
+package io.tavet.aid.app.rest.exception;
 
 import java.time.LocalDateTime;
 

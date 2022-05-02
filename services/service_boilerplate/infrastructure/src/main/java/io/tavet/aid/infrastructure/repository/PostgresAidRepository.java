@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 
 import io.tavet.aid.domain.entity.aid.Aid;
 import io.tavet.aid.domain.entity.aid.exception.AidNotFoundException;
-import io.tavet.aid.domain.entity.location.Location;
+import io.tavet.aid.domain.entity.location.GeoLocation;
 import io.tavet.aid.domain.repository.AidRepository;
 import io.tavet.aid.infrastructure.entity.AidEntity;
 
@@ -47,7 +47,7 @@ public class PostgresAidRepository implements AidRepository {
                 .id(entity.getId())
                 .description(entity.getDescription())
                 .title(entity.getTitle())
-                .location(new Location(entity.getLatitude(), entity.getLongitude())).build();
+                .location(new GeoLocation(entity.getLatitude(), entity.getLongitude())).build();
     }
 
 }
