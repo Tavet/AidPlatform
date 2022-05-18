@@ -7,8 +7,8 @@ packer {
   }
 }
 
-source "amazon-ebs" "ubuntu" {
-  ami_name      = "k8s-cluster-aid-platform"
+source "amazon-ebs" "bastion" {
+  ami_name      = "bastion-aid-platform"
   instance_type = "t2.micro"
   region        = "eu-central-1"
   source_ami_filter {
@@ -24,8 +24,13 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  name    = "k8s-cluster"
+  name    = "bastion"
   sources = [
-    "source.amazon-ebs.ubuntu"
+    "source.amazon-ebs.bastion"
   ]
+
+  provisioner "shell" {
+    execute_command  = "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+    script           = "bastion.sh"
+  }
 }
