@@ -20,8 +20,8 @@ module "network" {
 }
 
 
-module "k8s" {
-  source            = "./modules/kubernetes"
+module "bastion" {
+  source            = "./modules/bastion"
   availability_zone = var.availability_zone
   eip_ip_address    = module.network.eip_ip_address
   eip_id            = module.network.eip_id

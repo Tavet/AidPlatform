@@ -18,7 +18,7 @@ source "amazon-ebs" "bastion" {
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["107982701859"]
+    owners      = ["099720109477"]
   }
   ssh_username = "ubuntu"
 }
@@ -31,6 +31,6 @@ build {
 
   provisioner "shell" {
     execute_command  = "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
-    script           = "bastion.sh"
+    script           = "./bastion.sh"
   }
 }
