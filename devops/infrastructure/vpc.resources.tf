@@ -13,7 +13,7 @@ resource "aws_vpc" "aid_platform" {
 resource "aws_subnet" "aid_platform_private" {
   vpc_id            = aws_vpc.aid_platform.id
   cidr_block        = "10.0.0.0/24"
-  availability_zone = "eu-central-1b"
+  availability_zone = var.availability_zone
 
   tags = {
     Name                                = "aidplatform-private-1b"
@@ -27,7 +27,7 @@ resource "aws_subnet" "aid_platform_private" {
 resource "aws_subnet" "aid_platform_public" {
   vpc_id            = aws_vpc.aid_platform.id
   cidr_block        = "10.0.16.0/24"
-  availability_zone = "eu-central-1b"
+  availability_zone = var.availability_zone
 
   tags = {
     Name                                = "aidplatform-public-1b"
