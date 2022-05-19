@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "bastion" {
-  ami_name      = "bastion-aid-platform"
+  ami_name      = "bastion-aid-platform-dev"
   instance_type = "t2.micro"
   region        = "eu-central-1"
   source_ami_filter {

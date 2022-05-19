@@ -23,7 +23,7 @@ data "aws_ami" "bastion_ami" {
 resource "aws_security_group" "bastion_sg" {
   name        = "ssh-bastion"
   description = "SSH Bastion Hosts"
-  vpc_id      = aws_vpc.aid_platform.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "SSH"
@@ -54,6 +54,7 @@ resource "aws_instance" "bastion_instance" {
 
   security_groups = [resource.aws_security_group.bastion_sg]
 
+  user_data = data.template_file.bastion_startup.rendered
 
   # lifecycle {
   #   ignore_chances = [ami]
@@ -62,6 +63,12 @@ resource "aws_instance" "bastion_instance" {
 
 resource "aws_eip_association" "bastion_instance_eip" {
   instance_id   = aws_instance.bastion_instance.id
-  allocation_id = aws_eip.aid_platform.id
+  allocation_id = var.eip_id
 }
 
+data "template_file" "bastion_startup" {
+  template = file("${path.module}/bastion-startup.sh")
+  vars = {
+    BASTOPN_IP = var.eip_ip_address
+  }
+}

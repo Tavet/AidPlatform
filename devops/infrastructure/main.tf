@@ -13,3 +13,17 @@ provider "aws" {
   profile = "default"
   region  = var.region
 }
+
+module "network" {
+  source            = "./modules/network"
+  availability_zone = var.availability_zone
+}
+
+
+module "k8s" {
+  source            = "./modules/kubernetes"
+  availability_zone = var.availability_zone
+  eip_ip_address    = module.network.eip_ip_address
+  eip_id            = module.network.eip_id
+  vpc_id            = module.network.vpc_id
+}
